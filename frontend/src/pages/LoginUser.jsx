@@ -19,7 +19,9 @@ function LoginUser() {
     e.preventDefault();
     console.log("Login attempted");
     try {
-      const baseUrl = "http://localhost:5000";
+      const baseUrl = import.meta.env.DEV
+        ? "http://localhost:5000"
+        : "https://getpanditji.onrender.com";
 
       const res = await fetch(`${baseUrl}/api/user/login`, {
         method: "POST",

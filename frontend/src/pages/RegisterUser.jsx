@@ -22,7 +22,9 @@ function RegisterUser() {
     e.preventDefault();
 
     try {
-      const baseUrl = import.meta.env.DEV ? "http://localhost:5000" : "xyz";
+      const baseUrl = import.meta.env.DEV
+        ? "http://localhost:5000"
+        : "https://getpanditji.onrender.com";
       const data = await fetch(`${baseUrl}/api/user/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
