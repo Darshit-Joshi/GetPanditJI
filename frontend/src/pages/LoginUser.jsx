@@ -88,7 +88,12 @@ function LoginUser() {
 
         <p className="text-center text-sm mt-5 text-gray-600">
           New here?{" "}
-          <span className="text-orange-600 cursor-pointer">Create Account</span>
+          <span
+            onClick={() => navigate("/register")}
+            className="text-orange-600 cursor-pointer"
+          >
+            Create Account
+          </span>
         </p>
       </div>
     </div>
