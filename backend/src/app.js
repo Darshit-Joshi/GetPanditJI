@@ -8,7 +8,7 @@ const app = express();
 app.set("trust proxy", 1);
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://yourfrontenddomain.com"],
+    origin: process.env.FRONTEND_URL,
     credentials: true,
   }),
 );
