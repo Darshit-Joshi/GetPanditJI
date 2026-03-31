@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { registerUser } from "../services/auth.js";
 
 function RegisterUser() {
   const navigate = useNavigate();
+
+  const [loading, setLoading] = useState(false);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -20,29 +23,18 @@ function RegisterUser() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     try {
-      const baseUrl = import.meta.env.DEV
-        ? "http://localhost:5000"
-        : "https://getpanditji.onrender.com";
-      const data = await fetch(`${baseUrl}/api/user/register`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const res = await registerUser(formData);
 
-      const data1 = await data.json();
-      if (!data.ok) {
-        throw new Error(data.message || "Registration failed");
-      }
-      localStorage.setItem("userToken", data1.token);
-
-      navigate("/login"); // frontend route
+      alert(res.message || "Registered successfully");
+      navigate("/login");
     } catch (error) {
       alert(error.message || "Registration failed");
+    } finally {
+      setLoading(false);
     }
-
-    console.log(formData);
   };
 
   return (
@@ -97,9 +89,14 @@ function RegisterUser() {
 
           <button
             type="submit"
-            className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold p-3 rounded-lg transition"
+            disabled={loading}
+            className={`w-full font-semibold p-3 rounded-lg transition ${
+              loading
+                ? "bg-orange-300 cursor-not-allowed"
+                : "bg-orange-500 hover:bg-orange-600 text-white"
+            }`}
           >
-            Register
+            {loading ? "Registering..." : "Register"}
           </button>
         </form>
 

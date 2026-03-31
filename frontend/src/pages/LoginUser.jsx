@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { loginUser } from "../services/auth.js";
 
 function LoginUser() {
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -14,37 +16,26 @@ function LoginUser() {
       [e.target.name]: e.target.value,
     });
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Login attempted");
+
+    setLoading(true);
+
     try {
-      const baseUrl = import.meta.env.DEV
-        ? "http://localhost:5000"
-        : "https://getpanditji.onrender.com";
+      const res = await loginUser(formData);
 
-      const res = await fetch(`${baseUrl}/api/user/login`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        credentials: "include",
-        body: JSON.stringify(formData),
-      });
+      alert(res.message || "Login successful");
 
-      const data = await res.json();
+      // optional: fetch profile after login
+      // const profile = await getProfile();
 
-      if (!res.ok) {
-        alert(data.message);
-        return;
-      }
-
-      localStorage.setItem("adminToken", data.accessToken);
-      navigate("/");
-    } catch (err) {
-      console.error("Login error:", err);
+      navigate("/"); // or dashboard
+    } catch (error) {
+      alert(error.message || "Login failed");
+    } finally {
+      setLoading(false);
     }
-    console.log(formData);
   };
-
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-yellow-100 via-orange-100 to-yellow-200 relative overflow-hidden">
       {/* Ganesh Background */}

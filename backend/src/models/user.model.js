@@ -11,15 +11,19 @@ const UserSchema = new mongoose.Schema(
 
     mobile: {
       type: String,
+      required: true,
+      unique: true,
       minlength: 10,
       maxlength: 15,
-      required: true,
     },
 
     email: {
       type: String,
       required: true,
       unique: true,
+      lowercase: true,
+      trim: true,
+      match: [/^\S+@\S+\.\S+$/, "Please use a valid email"],
     },
 
     password: {
@@ -28,9 +32,35 @@ const UserSchema = new mongoose.Schema(
       minlength: 6,
     },
 
+    role: {
+      type: String,
+      enum: ["user", "pandit", "admin"],
+      default: "user",
+    },
+
     refreshToken: {
       type: String,
     },
+    zodiacSign: {
+      type: String,
+      enum: [
+        "aries",
+        "taurus",
+        "gemini",
+        "cancer",
+        "leo",
+        "virgo",
+        "libra",
+        "scorpio",
+        "sagittarius",
+        "capricorn",
+        "aquarius",
+        "pisces",
+      ],
+    },
+    dateOfBirth: Date,
+    timeOfBirth: String,
+    placeOfBirth: String,
   },
   {
     timestamps: true,
@@ -62,7 +92,7 @@ UserSchema.methods.generateAccessToken = function () {
     {
       _id: this._id,
       email: this.email,
-      name: this.name,
+      role: this.role,
     },
     process.env.ACCESS_TOKEN_SECRET,
     {

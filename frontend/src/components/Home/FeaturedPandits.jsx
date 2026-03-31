@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import img2 from "../assets/img2.jpg"; // adjust path if needed
-import img1 from "../assets/img1.jpg";
+import img2 from "../../assets/img2.jpg"; // adjust path if needed
+import img1 from "../../assets/img1.jpg";
 
 function FeaturedPandits() {
   const pandits = [

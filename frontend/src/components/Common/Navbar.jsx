@@ -24,16 +24,15 @@ function Navbar() {
       ? "text-orange-600 font-semibold"
       : "text-gray-700";
   };
-
   return (
-    <nav className="flex justify-between items-center px-8 py-4 bg-white shadow-sm sticky top-0 z-50">
+    <nav className="flex flex-wrap justify-between items-center px-4 md:px-8 py-4 bg-white shadow-sm sticky top-0 z-50">
       {/* Logo */}
-      <Link to="/" className="text-2xl font-bold text-orange-600">
+      <Link to="/" className="text-xl md:text-2xl font-bold text-orange-600">
         AstroConnect
       </Link>
 
       {/* Links */}
-      <div className="hidden md:flex items-center gap-6 font-medium">
+      <div className="flex flex-wrap justify-center w-full md:w-auto mt-4 md:mt-0 gap-4 md:gap-6 font-medium">
         {navLinks.map((link) => (
           <Link
             key={link.path}
@@ -46,14 +45,14 @@ function Navbar() {
       </div>
 
       {/* Auth */}
-      <div className="flex gap-4">
+      <div className="flex w-full md:w-auto justify-center md:justify-end mt-4 md:mt-0 gap-3 md:gap-4">
         <Link to="/login">
-          <button className="border border-orange-500 text-orange-600 px-4 py-2 rounded-lg">
+          <button className="border border-orange-500 text-orange-600 px-3 md:px-4 py-2 rounded-lg text-sm md:text-base">
             Login
           </button>
         </Link>
         <Link to="/register">
-          <button className="bg-orange-500 text-white px-4 py-2 rounded-lg">
+          <button className="bg-orange-500 text-white px-3 md:px-4 py-2 rounded-lg text-sm md:text-base">
             Register
           </button>
         </Link>

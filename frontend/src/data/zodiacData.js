@@ -1,0 +1,88 @@
+const zodiacData = [
+  {
+    name: "Aries",
+    symbol: "♈",
+    slug: "aries",
+    url: "https://cdn-icons-png.flaticon.com/512/188/188987.png",
+    info: "Aries is bold, energetic, and action-driven. This sign thrives on leadership and challenges. Aries individuals are ambitious and confident but should control impulsive decisions and focus their energy on productive goals.",
+  },
+  {
+    name: "Taurus",
+    symbol: "♉",
+    slug: "taurus",
+    url: "https://cdn-icons-png.flaticon.com/512/188/188988.png",
+    info: "Taurus is grounded, stable, and focused on security. Known for patience and persistence, Taurus values comfort and consistency. However, they should avoid stubbornness and remain open to change when necessary.",
+  },
+  {
+    name: "Gemini",
+    symbol: "♊",
+    slug: "gemini",
+    url: "https://cdn-icons-png.flaticon.com/512/188/188989.png",
+    info: "Gemini represents communication, curiosity, and adaptability. These individuals are quick thinkers and highly social. They excel in networking but should avoid inconsistency and lack of focus in important matters.",
+  },
+  {
+    name: "Cancer",
+    symbol: "♋",
+    slug: "cancer",
+    url: "https://cdn-icons-png.flaticon.com/512/188/188990.png",
+    info: "Cancer is emotional, intuitive, and nurturing. This sign values family and emotional security. While empathy is a strength, mood swings and over-sensitivity may create challenges in relationships.",
+  },
+  {
+    name: "Leo",
+    symbol: "♌",
+    slug: "leo",
+    url: "https://cdn-icons-png.flaticon.com/512/188/188991.png",
+    info: "Leo is confident, charismatic, and leadership-oriented. They enjoy recognition and creativity. Leos shine in leadership roles but should manage ego and avoid dominating others in personal and professional life.",
+  },
+  {
+    name: "Virgo",
+    symbol: "♍",
+    slug: "virgo",
+    url: "https://cdn-icons-png.flaticon.com/512/188/188992.png",
+    info: "Virgo is practical, analytical, and detail-oriented. Known for discipline and precision, they excel in planning. However, overthinking and perfectionism can lead to stress if not balanced properly.",
+  },
+  {
+    name: "Libra",
+    symbol: "♎",
+    slug: "libra",
+    url: "https://cdn-icons-png.flaticon.com/512/188/188993.png",
+    info: "Libra represents balance, harmony, and relationships. They seek fairness and peace. Libras are diplomatic and charming but may struggle with decision-making and avoiding necessary conflicts.",
+  },
+  {
+    name: "Scorpio",
+    symbol: "♏",
+    slug: "scorpio",
+    url: "https://cdn-icons-png.flaticon.com/512/188/188994.png",
+    info: "Scorpio is intense, passionate, and transformative. Loyalty and emotional depth define this sign. Strong determination is a strength, but secrecy and controlling tendencies can create challenges.",
+  },
+  {
+    name: "Sagittarius",
+    symbol: "♐",
+    slug: "sagittarius",
+    url: "https://cdn-icons-png.flaticon.com/512/188/188995.png",
+    info: "Sagittarius is adventurous, optimistic, and freedom-loving. They seek knowledge and exploration. Honest and enthusiastic, they should avoid impatience and lack of commitment in long-term goals.",
+  },
+  {
+    name: "Capricorn",
+    symbol: "♑",
+    slug: "capricorn",
+    url: "https://cdn-icons-png.flaticon.com/512/188/188996.png",
+    info: "Capricorn is disciplined, ambitious, and goal-oriented. Known for persistence, they achieve long-term success. However, they should avoid rigidity and pay attention to emotional aspects of life.",
+  },
+  {
+    name: "Aquarius",
+    symbol: "♒",
+    slug: "aquarius",
+    url: "https://cdn-icons-png.flaticon.com/512/188/188997.png",
+    info: "Aquarius is innovative, independent, and forward-thinking. They value originality and social causes. While creative, they may appear emotionally distant in personal relationships.",
+  },
+  {
+    name: "Pisces",
+    symbol: "♓",
+    slug: "pisces",
+    url: "https://cdn-icons-png.flaticon.com/512/188/188998.png",
+    info: "Pisces is intuitive, compassionate, and imaginative. Deep emotional and spiritual connection defines them. Creativity is strong, but escapism and lack of practicality can sometimes become challenges.",
+  },
+];
+
+export default zodiacData;

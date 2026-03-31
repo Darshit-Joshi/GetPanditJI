@@ -1,10 +1,10 @@
-import FeaturedPandits from "../components/FeaturedPandits";
-import Hero from "../components/Hero";
-import HowItWorks from "../components/HowItWorks";
-import QuickTools from "../components/QuickTools";
-import Testimonials from "../components/Testimonial";
-import WhyChooseUs from "../components/WhyChooseUs";
-import FinalCTA from "../components/FinalCTA";
+import FeaturedPandits from "../components/Home/FeaturedPandits";
+import Hero from "../components/Home/Hero";
+import HowItWorks from "../components/Home/HowItWorks";
+import QuickTools from "../components/Home/QuickTools";
+import Testimonials from "../components/Home/Testimonial";
+import WhyChooseUs from "../components/Home/WhyChooseUs";
+import FinalCTA from "../components/Home/FinalCTA";
 
 function Home() {
   return (
